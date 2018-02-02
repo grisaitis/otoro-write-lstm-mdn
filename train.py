@@ -25,7 +25,7 @@ def main():
                      help='number of epochs')
   parser.add_argument('--save_every', type=int, default=500,
                      help='save frequency')
-  parser.add_argument('--model_dir', type=str, default='save',
+  parser.add_argument('--model_dir', type=str, default='checkpoints',
                      help='directory to save model to')
   parser.add_argument('--grad_clip', type=float, default=10.,
                      help='clip gradients at this value')

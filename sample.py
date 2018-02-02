@@ -15,7 +15,7 @@ parser.add_argument('--sample_length', type=int, default=800,
                    help='number of strokes to sample')
 parser.add_argument('--scale_factor', type=int, default=10,
                    help='factor to scale down by for svg output.  smaller means bigger output')
-parser.add_argument('--model_dir', type=str, default='save',
+parser.add_argument('--model_dir', type=str, default='checkpoints',
                    help='directory to save model to')
 parser.add_argument('--freeze_graph', dest='freeze_graph', action='store_true',
                    help='if true, freeze (replace variables with consts), prune (for inference) and save graph')
