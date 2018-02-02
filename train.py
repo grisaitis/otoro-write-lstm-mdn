@@ -1,4 +1,3 @@
-import numpy as np
 import tensorflow as tf
 
 import argparse
@@ -8,6 +7,7 @@ import pickle
 
 from utils import DataLoader
 from model import Model
+
 
 def main():
   parser = argparse.ArgumentParser()

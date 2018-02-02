@@ -3,7 +3,6 @@ import pickle
 import numpy as np
 import xml.etree.ElementTree as ET
 import random
-import svgwrite
 from IPython.display import SVG, display
 
 def get_bounds(data, factor):
@@ -30,6 +29,10 @@ def get_bounds(data, factor):
 def draw_strokes(data, factor=10, svg_filename = 'sample.svg'):
   min_x, max_x, min_y, max_y = get_bounds(data, factor)
   dims = (50 + max_x - min_x, 50 + max_y - min_y)
+  try:
+    import svgwrite
+  except ImportError:
+    return
     
   dwg = svgwrite.Drawing(svg_filename, size=dims)
   dwg.add(dwg.rect(insert=(0, 0), size=dims,fill='white'))
@@ -84,6 +87,10 @@ def draw_strokes_random_color(stroke, factor=10, svg_filename = 'sample_random_c
 def draw_strokes_custom_color(data, factor=10, svg_filename = 'test.svg', color_data = None, stroke_width = 1):
   min_x, max_x, min_y, max_y = get_bounds(data, factor)
   dims = (50 + max_x - min_x, 50 + max_y - min_y)
+  try:
+    import svgwrite
+  except ImportError:
+    return
     
   dwg = svgwrite.Drawing(svg_filename, size=dims)
   dwg.add(dwg.rect(insert=(0, 0), size=dims,fill='white'))
@@ -122,6 +129,10 @@ def draw_strokes_custom_color(data, factor=10, svg_filename = 'test.svg', color_
 def draw_strokes_pdf(data, param, factor=10, svg_filename = 'sample_pdf.svg'):
   min_x, max_x, min_y, max_y = get_bounds(data, factor)
   dims = (50 + max_x - min_x, 50 + max_y - min_y)
+  try:
+    import svgwrite
+  except ImportError:
+    return
 
   dwg = svgwrite.Drawing(svg_filename, size=dims)
   dwg.add(dwg.rect(insert=(0, 0), size=dims,fill='white'))
